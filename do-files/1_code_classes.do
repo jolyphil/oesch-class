@@ -89,6 +89,11 @@ keep essround idno cntry ///
 	class16 class8 class5	
 	
 * ______________________________________________________________________________
+* Save as CSV
+	
+export delimited using "${data}oesch_class_ess_1-8.csv", nolabel replace
+	
+* ______________________________________________________________________________
 * Close
 
 log close

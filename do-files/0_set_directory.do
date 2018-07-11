@@ -18,7 +18,7 @@ global path "M:/user/joly/Analyses/oesch-class/" // **Put your own path here**
 
 global data "${path}data/"
 	global data_raw "${data}raw/"
-global dofiles "${path}stata_do-files/"
+global dofiles "${path}do-files/"
 global logfiles "${path}logfiles/"
 global oesch_scripts "${path}oesch_scripts/"
 
