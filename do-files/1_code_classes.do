@@ -6,7 +6,7 @@
 
 version 15
 capture log close
-capture log using "${logfiles}test.smcl", replace
+capture log using "${logfiles}1_code_classes.smcl", replace
 set more off
 
 * ______________________________________________________________________________

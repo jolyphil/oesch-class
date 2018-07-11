@@ -5,3 +5,6 @@
 !data/raw/ess1/ESS1csFR.dta
 !data/raw/ess2/ESS2csFR.dta
 !data/raw/ess2/ESS2csHU.dta
+
+# Stata logfiles
+*.smcl
