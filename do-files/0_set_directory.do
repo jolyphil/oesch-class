@@ -5,7 +5,7 @@
 ********************************************************************************
 
 * Important:
-	* Run this do-file before running any other di-file in the repository.
+	* Run this do-file before running any other do-file in the repository.
 	* This file loads paths to the folders of the repository in global macros.
 
 * ______________________________________________________________________________
@@ -25,18 +25,24 @@ global oesch_scripts "${path}oesch_scripts/"
 * ______________________________________________________________________________
 * Source datafiles
 
-global ess1 "${data_raw}ess1/ESS1e06_5.dta" // ESS 1
-global ess2 "${data_raw}ess2/ESS2e03_5.dta" // ESS 2
-global ess3 "${data_raw}ess3/ESS3e03_6.dta" // ESS 3
-global ess4 "${data_raw}ess4/ESS4e04_4.dta" // ESS 4
-global ess5 "${data_raw}ess5/ESS5e03_3.dta" // ESS 5
-global ess6 "${data_raw}ess6/ESS6e02_3.dta" // ESS 6
-global ess7 "${data_raw}ess7/ESS7e02_1.dta" // ESS 7
-global ess8 "${data_raw}ess8/ESS8e02.dta" // ESS 8
+* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+* Main datafiles
 
-global ess1csfr "${data_raw}ess1/ESS1csFR.dta" // ESS 1
-global ess2csfr "${data_raw}ess2/ESS2csFR.dta" // ESS 1
-global ess2cshu "${data_raw}ess2/ESS2csHU.dta" // ESS 1
+global ess1 "${data_raw}ess1/ESS1e06_5.dta" // ESS 1, integrated dataset
+global ess2 "${data_raw}ess2/ESS2e03_5.dta" // ESS 2, integrated dataset
+global ess3 "${data_raw}ess3/ESS3e03_6.dta" // ESS 3, integrated dataset
+global ess4 "${data_raw}ess4/ESS4e04_4.dta" // ESS 4, integrated dataset
+global ess5 "${data_raw}ess5/ESS5e03_3.dta" // ESS 5, integrated dataset
+global ess6 "${data_raw}ess6/ESS6e02_3.dta" // ESS 6, integrated dataset
+global ess7 "${data_raw}ess7/ESS7e02_1.dta" // ESS 7, integrated dataset
+global ess8 "${data_raw}ess8/ESS8e02.dta"   // ESS 8, integrated dataset
+
+* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+* Country-specific data
+
+global ess1csfr "${data_raw}ess1/ESS1csFR.dta" // ESS 1, France country-specific
+global ess2csfr "${data_raw}ess2/ESS2csFR.dta" // ESS 2, France country-specific
+global ess2cshu "${data_raw}ess2/ESS2csHU.dta" // ESS 2, Hungary country-spec.
 
 * ______________________________________________________________________________
 * Source ESS miss do-file
