@@ -1,0 +1,7 @@
+# Stata datafiles
+*.dta
+
+# Keep country-specific data
+!data/raw/ess1/ESS1csFR.dta
+!data/raw/ess2/ESS2csFR.dta
+!data/raw/ess2/ESS2csHU.dta
