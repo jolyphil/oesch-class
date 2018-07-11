@@ -2,22 +2,22 @@
 
 ## Contents
 1. Description
-2. Raw data
-3. Generated data
-4. Instruction to generate the class variables
+2. What this repository contains
+3. Raw data
+4. Instruction to generate the CSV file
 
 ## 1  Description
 [Daniel Oesch](http://people.unil.ch/danieloesch/) (University of Lausanne) has developped a schema of social classes, which he discusses and applies in different publications (see Oesch 2006a, 2006b). On his personnal website, he offers [Stata, SPSS, and SAS scripts](http://people.unil.ch/danieloesch/scripts/) to generate the class schema using different surveys.
 
 Scholars working with other programs (especially R) might be interested in using Oesch's class schema as well. This repository contains material to apply the class schema in Stata on data from the European Social Survey, rounds 1 to 8. The scripts produce a **CSV file** containing the class variables. This file can be **merged** again with ESS data using any program. The respondents number (`idno`), the country (`cntry`), and the ESS round (`essround`) serve as merging keys. 
 
-Executing the do-files will produce the file `oesch_class_ess_1-8.csv`. You can download this file immediately [here](https://raw.githubusercontent.com/jolyphil/oesch-class/master/data/oesch_class_ess_1-8.csv).
+Executing the do-files will produce the file `oesch_class_ess_1-8.csv`. If you don't want to redo the procedure yourself, you can **download this file immediately [here](https://raw.githubusercontent.com/jolyphil/oesch-class/master/data/oesch_class_ess_1-8.csv)**.
 
 _References_
 
-Oesch, Daniel. 2006a. "Coming to Grips with a Changing Class Structure: An Analysis of Employment Stratification in Britain, Germany, Sweden and Switzerland." _International Sociology_ 21(2):263-88.
+> Oesch, Daniel. 2006a. "Coming to Grips with a Changing Class Structure: An Analysis of Employment Stratification in Britain, Germany, Sweden and Switzerland." _International Sociology_ 21(2):263-88.
 
-Oesch, Daniel. 2006b. _Redrawing the Class Map: Stratification and Institutions in Britain, Germany, Sweden and Switzerland_. Houndmills, Basingstoke, Hampshire: Palgrave Macmillan.
+> Oesch, Daniel. 2006b. _Redrawing the Class Map: Stratification and Institutions in Britain, Germany, Sweden and Switzerland_. Houndmills, Basingstoke, Hampshire: Palgrave Macmillan.
 
 
 ## 2 What this repository contains
@@ -31,14 +31,14 @@ Oesch, Daniel. 2006b. _Redrawing the Class Map: Stratification and Institutions 
   * `0_set_directory.do` loads paths to the folders of the repository in global macros.
   * `1_code_classes.do` produces the CSV file.
 
-# 2 Raw data
+## 3 Raw data
 Data from the European Social Survey (rounds 1 to 8) was used to generate the class variables.
 
-## 2.1 Conditions of use
+### 3.1 Conditions of use
 
-Please consult the conditions of use of the [ESS]( http://www.europeansocialsurvey.org/data/conditions_of_use.html) and of the [EVS]( https://www.gesis.org/en/services/data-analysis/international-survey-programs/european-values-study/data-access/) before downloading the data. 
+Please consult the conditions of use of the [ESS]( http://www.europeansocialsurvey.org/data/conditions_of_use.html) before downloading the data. 
 
-## 2.2 References
+### 3.2 References
 
 ESS. 2002. ESS Round 1: European Social Survey Round 1 Data. Data file edition 6.5. NSD - Norwegian Centre for Research Data, Norway - Data Archive and distributor of ESS data for ESS ERIC.
 
@@ -57,24 +57,24 @@ ESS. 2014. ESS Round 7: European Social Survey Round 7 Data. Data file edition 2
 ESS. 2016. ESS Round 8: European Social Survey Round 8 Data. Data file edition 2.0. NSD - Norwegian Centre for Research Data, Norway - Data Archive and distributor of ESS data for ESS ERIC.
 
 
-# 3 Instructions to generate the csv file
+## 4 Instructions to generate the CSV file
 A few steps are necessary.
 
-## Step 1: Clone the repository
+### Step 1: Clone the repository
 
 * Clone or download the repository on your own computer. 
 
-## Step 2: Download the ESS data
+### Step 2: Download the ESS data
 
-* Go to the European Social Survey website and, from there, on [Germany's page]( http://www.europeansocialsurvey.org/data/country.html?c=germany).
+* Go to the European Social Survey website and, from there, on [Data and Documentation by Year]( http://www.europeansocialsurvey.org/data/round-index.html).
 
-### a) Country files
+#### a) Integrated files
 
-* Download the "country file (subset of integrated file)" in Stata format (DTA) for each of the eight ESS rounds. 
+* Download the "integrated files" in Stata format (DTA) for each of the eight ESS rounds. 
 * Place the datafiles in their appropriate folder in `data/raw/`.
   * Example: `data/raw/ess1/ESS1e06_5.dta`
 
-### b) Country-specific data for France (rounds 1 and 2) and Hungary (round 2)
+#### b) Country-specific data for France (rounds 1 and 2) and Hungary (round 2)
 
 * Unfortunately, the ESS only provides country-specific data as SPSS portable files (POR).
 * These files need to be converted in DTA format.
@@ -82,14 +82,14 @@ A few steps are necessary.
 * That's what I have done. The DTA files are already available in the repository.
   * Example: `data/raw/ess1/ESS1csFR.dta`
 
-## Step 3: Set up your working directory
+### Step 3: Set up your working directory
 
 * The repository contains a do-file, `do-files/0_set_directory.do`, which details the hierarchical structure of the repository and allows to save the path to each folder in global macros. 
 * If you cloned the repository, the only change you would need to do is to add the path to your local copy of the repository.
-  * Update the line `global path "M:/user/joly/Analyses/oesch-class/"` with the path to your local copy of the repository. Be sure that your path ends with `/`
+  * Update the line `global path "M:/user/joly/Analyses/oesch-class/"` with the path to your local copy of the repository. **Be sure that your path ends with `/`**
 * Double-check that the paths to the source datafiles are correct.
 
-## Step 4: Run the do-files
+### Step 4: Run the do-files
 
 * Run `0_set_directory.do` to save the global macros. 
 * Run `1_code_classes.do` to generate the CSV file. 
